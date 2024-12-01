@@ -9,11 +9,16 @@ export const createGameOverScene = () => {
     gameoverText: Phaser.GameObjects.Text;
     restartButton: Phaser.GameObjects.Rectangle;
     restartText: Phaser.GameObjects.Text;
-
+    scoreText: Phaser.GameObjects.Text;
+    score!: number;
+    
     constructor() {
       super("GameOver");
     }
 
+    init(data: { score: number }) {
+      this.score = data.score;
+  }
     preload() {
       this.load.image("sky", "assets/sky.png");
     }
@@ -45,6 +50,22 @@ export const createGameOverScene = () => {
         }
       );
       this.gameoverText.setOrigin(0.5);
+
+      this.scoreText = this.add.text(
+        windowWidth / 2 - 145,
+        windowHeight / 2,
+        "Score: " + this.score,
+        {
+          fontFamily: "Arial Black",
+          fontSize: "48px",
+          color: "#ffffff",
+          stroke: "#000000",
+          strokeThickness: 8,
+          align: "center",
+        }
+      );
+      this.gameoverText.setOrigin(0.4);
+      
 
       this.restartButton = this.add.rectangle(
         windowWidth / 2,
