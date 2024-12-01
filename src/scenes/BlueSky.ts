@@ -73,7 +73,7 @@ export const createBlueSkyScene = () => {
       gameState.bombs = createBombs(this, gameState.platforms);
 
       // Hit Bomb Handler
-      const hitBomb = createHitBombHandler(this);
+      const hitBomb = createHitBombHandler(this, gameState);
       this.physics.add.collider(
         gameState.player,
         gameState.bombs,
