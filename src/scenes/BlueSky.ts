@@ -44,6 +44,7 @@ export const createBlueSkyScene = () => {
     }
 
     create() {
+      gameState.score = 0;
       // Moving Background
       gameState.background = createBackground(this);
 
