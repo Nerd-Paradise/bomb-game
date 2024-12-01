@@ -19,11 +19,16 @@ To install the game, follow these steps:
     bun install
     ```
 
-## Running the Game
+## Running the Game locally
 
 To run the game locally, use the following command:
 ```sh
 bun dev
 ```
+
+## On browser
+
+You can play the game on browser 
+<https://nerd-paradise.github.io/bomb-game/>
 
 Enjoy playing the Bomb Game!
